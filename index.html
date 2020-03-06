@@ -8,101 +8,93 @@
     <!-- fontawesome kit -->
     <script src="https://kit.fontawesome.com/52ac5380d0.js" crossorigin="anonymous"></script>
 
+    <!-- bootastrap -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
     <header>
+
         <h1 class="main-head">
-            CHESS FRIES CENTER
+            <span>CHESS</span>  FRIES <span>CENTER</span>
         </h1>
-        <p class="head-tag">
-            get free delivery within zetech environs
+        <p class="head-tag text-muted">
+            <span class="tag-head">get</span> free <span class="tag-head">delivery</span> within <span class="tag-head">zetech</span>  environs
         </p>
 
-        <nav>
-            <p class="menu">
-                <a href="#" class="menu-link">Menu</a>
-            </p>
-            <a href="#">Call to order</a>
-        </nav>
+        <!-- <nav class="navbar">
+            <a href="#" class="nav-link">Menu</a>
+            <a href="#" class="nav-link">Call to order</a>
+        </nav> -->
+        <div class="topnav navbar">
+            <a class="active" href="#">Home</a>
+            <a href="#">Menu</a>
+            <a href="#" >Contact</a>
+            <a href="#">Opened</a>
+        </div>
     </header>
 
-    <main>
+    <main class="container wrapper">
 
-        <!-- staus section // location display -->
-        <section class="status">
-            <div class="location">Location</div>
-            <div class="status-open-close">
-                <p>Status</p>
-                <p>Open/Close</p>
-            </div>
-        </section>
+
 
         <!-- content -->
-        <section class="content">
-            <!-- wrapps all elements -->
-            <div class="wrapper">
-                <!-- items in it are wrapper-cards -->
-
-                <!-- card 1 -->
-                <div class="wrapper-card">
-                    <img src="" alt="fries">
-                    <h3 class="wrapper-head">
-                        Lorem, ipsum dolor.
-                    </h3>
-                    <p class="wrapper-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, molestias?
-                    </p>
-                    <button>
-                        <a href="#">Order</a>
-                    </button>
+        <div class="row mb-4">
+            <div class="col-sm-6">
+              <div class="card">
+                <img src="img/fries.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
-
-                <!-- card 2 -->
-                <div class="wrapper-card">
-                    <img src="" alt="fries">
-                    <h3 class="wrapper-head">
-                        Lorem, ipsum dolor.
-                    </h3>
-                    <p class="wrapper-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, molestias?
-                    </p>
-                    <button>
-                        <a href="#">Order</a>
-                    </button>
-                </div>
-
-                <!-- card 3 -->
-                <div class="wrapper-card">
-                    <img src="" alt="fries">
-                    <h3 class="wrapper-head">
-                        Lorem, ipsum dolor.
-                    </h3>
-                    <p class="wrapper-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, molestias?
-                    </p>
-                    <button>
-                        <a href="#">Order</a>
-                    </button>
-                </div>
-
-                <!-- card 4 -->
-                <div class="wrapper-card">
-                    <img src="" alt="fries">
-                    <h3 class="wrapper-head">
-                        Lorem, ipsum dolor.
-                    </h3>
-                    <p class="wrapper-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, molestias?
-                    </p>
-                    <button>
-                        <a href="#">Order</a>
-                    </button>
-                </div>
+              </div>
             </div>
-        </section>
+            <div class="col-sm-6">
+              <div class="card">
+                <img src="img/fries.jpg" class="card-img-top" alt="...">
 
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <img src="img/fries.jpg" class="card-img-top" alt="...">
+
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <img src="img/fries.jpg" class="card-img-top" alt="...">
+
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
         <!-- foot sections -->
-        <section class="foot-section">
+       
+        
+        <section class="foot-section mt-4">
             <div class="foot-card">
                 <h2>
                     FREE DELIVERY
@@ -111,18 +103,40 @@
                     within <span>Zetech</span> and environs
                 </p>
                 <p class="delivery-lists">
-                    <a href="#">view all locations here</a>
+                    <a href="#" data-toggle="modal" data-target="#staticBackdrop">view all locations here</a>
                 </p>
             </div>
-
+            <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                        ...
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Understood</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            <!-- modal ends -->
             <div class="foot-card">
-                <button>
-                    <h2>
-                        <a href="make_order.html">ORDER NOW</a>
-                    </h2>
+                <button type="button" class="btn btn-outline-success btn-lg btn-block">
+                    call to order
                 </button>
             </div>
         </section>
     </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
