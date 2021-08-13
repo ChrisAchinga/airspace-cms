@@ -19,23 +19,23 @@ const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "LogRocket Express API with Swagger",
-      version: "0.1.0",
+      title: "AirSpace Next API",
+      version: "0.0.0",
       description:
-        "This is a simple CRUD API application made with Express and documented with Swagger",
+        "A simle API foraviation data",
       license: {
         name: "MIT",
         url: "https://spdx.org/licenses/MIT.html",
       },
       contact: {
-        name: "LogRocket",
-        url: "https://logrocket.com",
-        email: "info@email.com",
+        name: "Chris Achinga",
+        url: "https://github.com/achingachris",
+        email: "achinga.chris@gmail.com",
       },
     },
     servers: [
       {
-        url: "http://localhost:3000/books",
+        url: "http://localhost:8000/airlines",
       },
     ],
   },
@@ -44,7 +44,7 @@ const options = {
 
 const specs = swaggerJsdoc(options);
 app.use(
-  "/api-docs",
+  "/api/docs",
   swaggerUi.serve,
   swaggerUi.setup(specs)
 );

@@ -5,7 +5,8 @@
   "description": "Airspace Next Server and API",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app"
+    "start": "node app",
+    "server": "nodemon app"
   },
   "repository": {
     "type": "git",
