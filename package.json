@@ -1,0 +1,34 @@
+{
+  "name": "airspace-next-server",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Airspace Next Server and API",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/achingachris/airspace-next-server.git"
+  },
+  "keywords": [
+    "Javascript",
+    "API",
+    "EXPRESS"
+  ],
+  "author": "Chris Achinga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/achingachris/airspace-next-server/issues"
+  },
+  "homepage": "https://github.com/achingachris/airspace-next-server#readme",
+  "devDependencies": {
+    "colors": "^1.4.0",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4"
+  }
+}
