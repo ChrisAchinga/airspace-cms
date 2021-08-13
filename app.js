@@ -15,15 +15,15 @@ const PORT = process.env.PORT || 8800
 
 // ------------------------------------------------------- //
 
-console.log(airlines)
-
 // Routes
 app.get('/', (req, res) => {
-  res.send('API Successfully running')
+  console.log('Main page Loaded successfully'.bgBlue.white)
+  res.send(`API Successfully running`)
 })
 
 // get all airlines
 app.get('/airlines', (req, res) => {
+  console.log('/airlines loaded'.bgGreen.white)
   res.json(airlines)
 })
 
@@ -31,6 +31,7 @@ app.get('/airlines', (req, res) => {
 app.get('/airlines/:slug', (req, res) => {
   const slug = req.params.slug
   const airline = airlines.find(a => a.slug === slug)
+  console.log(`/airlines/${slug} loaded`.bgYellow)
   res.json(airline)
 })
 
