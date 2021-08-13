@@ -18,6 +18,12 @@ const swaggerConfig = {
     servers: [
       {
         url: 'http://localhost:8000/airlines',
+        description: 'Local Server'
+      },
+    ],
+    tags: [
+      {
+        name: "Airlines API Operations", // name of a tag
       },
     ],
   },

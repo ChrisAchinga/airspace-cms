@@ -9,6 +9,7 @@ import swaggerConfig from './config/swagger.js'
 
 // routes
 import airlineRoutes from './routes/airlineRoutes.js'
+import aircraftRoutes from './routes/aircraftRoutes.js'
 
 // middleware
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'
@@ -33,6 +34,9 @@ app.get('/', (req, res) => {
 
 // airlines
 app.use('/api/airlines', airlineRoutes)
+
+// aircraft
+app.use('/api/aircraft', aircraftRoutes)
 
 app.use(notFound)
 app.use(errorHandler)

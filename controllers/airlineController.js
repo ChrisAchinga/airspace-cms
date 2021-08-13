@@ -3,7 +3,7 @@ import colors from 'colors'
 import airlines from '../data/airlines.js'
 
 const getAirlines = asyncHandler(async (req, res) => {
-  console.log('/airlines loaded'.bgGreen.white)
+  console.log('/api/airlines loaded'.bgGreen.white)
   res.json(airlines)
 })
 
