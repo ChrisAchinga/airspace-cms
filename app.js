@@ -2,7 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import colors from 'colors'
 // data
-import airlines from './src/data/airlines.js'
+import airlines from './data/airlines.js'
 
 // file configurations and initializations
 // express instance
