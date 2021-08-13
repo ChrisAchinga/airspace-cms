@@ -1,19 +1,53 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import colors from 'colors'
+import bodyParser from 'body-parser'
+import swaggerJsdoc from 'swagger-jsdoc'
+import swaggerUi from 'swagger-ui-express'
 // data
 import airlines from './data/airlines.js'
 
-// file configurations and initializations
 // express instance
 const app = express()
-// const router = express.Router()
 
 // dotenv
 dotenv.config()
 const PORT = process.env.PORT || 8800
 
-// ------------------------------------------------------- //
+// swagger_ui
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "LogRocket Express API with Swagger",
+      version: "0.1.0",
+      description:
+        "This is a simple CRUD API application made with Express and documented with Swagger",
+      license: {
+        name: "MIT",
+        url: "https://spdx.org/licenses/MIT.html",
+      },
+      contact: {
+        name: "LogRocket",
+        url: "https://logrocket.com",
+        email: "info@email.com",
+      },
+    },
+    servers: [
+      {
+        url: "http://localhost:3000/books",
+      },
+    ],
+  },
+  apis: ["./app.js"],
+};
+
+const specs = swaggerJsdoc(options);
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(specs)
+);
 
 // Routes
 app.get('/', (req, res) => {
