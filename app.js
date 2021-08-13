@@ -1,19 +1,29 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import colors from 'colors'
-// data
-import airlines from './src/data/airlines.js'
+import swaggerJsdoc from 'swagger-jsdoc'
+import swaggerUi from 'swagger-ui-express'
 
-// file configurations and initializations
+// swagger config
+import swaggerConfig from './config/swagger.js'
+
+// routes
+import airlineRoutes from './routes/airlineRoutes.js'
+
+// middleware
+import { notFound, errorHandler } from './middleware/errorMiddleware.js'
+
 // express instance
 const app = express()
-// const router = express.Router()
+app.use(express.json())
 
 // dotenv
 dotenv.config()
 const PORT = process.env.PORT || 8800
 
-// ------------------------------------------------------- //
+// swagger_ui
+const specs = swaggerJsdoc(swaggerConfig)
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(specs))
 
 // Routes
 app.get('/', (req, res) => {
@@ -21,19 +31,11 @@ app.get('/', (req, res) => {
   res.send(`API Successfully running`)
 })
 
-// get all airlines
-app.get('/airlines', (req, res) => {
-  console.log('/airlines loaded'.bgGreen.white)
-  res.json(airlines)
-})
+// airlines
+app.use('/api/airlines', airlineRoutes)
 
-// get one airline by name: slug
-app.get('/airlines/:slug', (req, res) => {
-  const slug = req.params.slug
-  const airline = airlines.find(a => a.slug === slug)
-  console.log(`/airlines/${slug} loaded`.bgYellow)
-  res.json(airline)
-})
+app.use(notFound)
+app.use(errorHandler)
 
 app.listen(
   PORT,
