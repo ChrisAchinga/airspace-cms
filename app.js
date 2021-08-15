@@ -4,8 +4,11 @@ import colors from 'colors'
 import swaggerJsdoc from 'swagger-jsdoc'
 import swaggerUi from 'swagger-ui-express'
 
+// Database Connect
+import connectDB from './database/connectDB.js'
+
 // swagger config
-import swaggerConfig from './config/swagger.js'
+import swaggerConfig from './docs/swagger.js'
 
 // routes
 import airlineRoutes from './routes/airlineRoutes.js'
@@ -21,6 +24,9 @@ app.use(express.json())
 // dotenv
 dotenv.config()
 const PORT = process.env.PORT || 8800
+
+// DB
+connectDB()
 
 // swagger_ui
 const specs = swaggerJsdoc(swaggerConfig)
