@@ -5,7 +5,7 @@ import swaggerJsdoc from 'swagger-jsdoc'
 import swaggerUi from 'swagger-ui-express'
 
 // swagger config
-import swaggerConfig from './config/swagger.js'
+import swaggerConfig from './docs/swagger.js'
 
 // routes
 import airlineRoutes from './routes/airlineRoutes.js'
