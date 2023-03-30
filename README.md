@@ -1,3 +1,3 @@
-# Airspace Next Server
+# JobSeekerPro
 
-[docs](docs/README.md)
+[Documentation](docs/docs.md)
