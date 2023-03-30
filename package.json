@@ -1,0 +1,30 @@
+{
+  "name": "jobseekerpro",
+  "version": "1.0.0",
+  "description": "A JobSeekerPro Application; Built For Fun, then to Scale",
+  "main": "app.js",
+  "author": "Chris Achinga",
+  "type": "commonjs",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/achingachris/JobSeekerPro.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/achingachris/JobSeekerPro/issues"
+  },
+  "homepage": "https://github.com/achingachris/JobSeekerPro#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "nodemon": "^2.0.22"
+  }
+}
