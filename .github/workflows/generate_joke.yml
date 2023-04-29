@@ -1,58 +1,32 @@
 name: Generate Developer Joke
 
 on:
+  schedule:
+    - cron: '0 12 * * *'
   workflow_dispatch:
-  # schedule:
-  #   - cron: '0 0 * * *' # Run this workflow daily at 00:00 UTC
 
 jobs:
   generate_joke:
     runs-on: ubuntu-latest
+
     steps:
+    - name: Set up Node.js 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+
     - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: 3.9
 
     - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install openai
+      run: pip install requests
 
-    - name: Generate joke and create file
+    - name: Generate joke
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      run: |
-        python -c "
-            import openai
-            import os
-
-            openai.api_key = os.environ['OPENAI_API_KEY']
-
-            def generate_joke():
-                prompt = 'Tell me a developer joke.'
-                response = openai.Completion.create(
-                    engine='text-davinci-002',
-                    prompt=prompt,
-                    temperature=0.8,
-                    max_tokens=100,
-                    top_p=1,
-                    frequency_penalty=0,
-                    presence_penalty=0
-                )
-                return response.choices[0].text.strip()
-
-            joke = generate_joke()
-            with open('developer_joke.txt', 'w') as f:
-                f.write(joke)
-          "
-    - name: Commit and push joke file
-      run: |
-        git config user.name "GitHub Actions Bot"
-        git config user.email "achinga.chris@gmail.com"
-        git add developer_joke.txt
-        git commit -m "Generated new developer joke"
-        git push
+      run: python generate_joke.py
